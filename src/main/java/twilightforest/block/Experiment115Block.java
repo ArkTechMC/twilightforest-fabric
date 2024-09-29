@@ -51,10 +51,10 @@ public class Experiment115Block extends Block {
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
 		return switch (state.getValue(BITES_TAKEN)) {
-			default -> FULL_SHAPE;
 			case 2, 3 -> THREE_QUARTER_SHAPE;
 			case 4, 5 -> HALF_SHAPE;
 			case 6, 7 -> QUARTER_SHAPE;
+			default -> FULL_SHAPE;
 		};
 	}
 

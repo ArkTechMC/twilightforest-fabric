@@ -64,10 +64,10 @@ public class GiantBlockModel implements BakedModel, FabricBakedModel {
 	//based on the offsets written in the original giant block json
 	private BlockPos magicOffsetFromDir(Direction side) {
 		return switch (side) {
-			default -> new BlockPos(0, 0, -1);
 			case DOWN -> new BlockPos(0, 0, 2);
 			case NORTH, SOUTH -> new BlockPos(0, 1, 0);
 			case WEST, EAST -> new BlockPos(0, 1, -1);
+			default -> new BlockPos(0, 0, -1);
 		};
 	}
 

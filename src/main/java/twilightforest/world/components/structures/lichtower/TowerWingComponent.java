@@ -1,8 +1,5 @@
 package twilightforest.world.components.structures.lichtower;
 
-import com.google.common.collect.Lists;
-import io.github.fabricators_of_create.porting_lib.mixin.accessors.common.accessor.PaintingAccessor;
-import io.github.fabricators_of_create.porting_lib.util.TagUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -674,11 +671,11 @@ public class TowerWingComponent extends TFStructureComponentOld {
 		final BlockState topStoneBrickStairs = stoneBrickStairs.setValue(StairBlock.HALF, Half.TOP);
 
 		placeBlock(world, stoneBrick, cx, bottom, cx, sbb);
-		placeBlock(world, stoneBrick, cx, top-1, cx, sbb);
-		if(size < 6) {
+		placeBlock(world, stoneBrick, cx, top - 1, cx, sbb);
+		if (size < 6) {
 			surroundBlockCardinalRotated(world, stoneBrickStairs, cx, bottom, cx, sbb);
 
-			surroundBlockCardinalRotated(world, topStoneBrickStairs, cx, top-1, cx, sbb);
+			surroundBlockCardinalRotated(world, topStoneBrickStairs, cx, top - 1, cx, sbb);
 		} else {
 			surroundBlockCardinalRotated(world, stoneBrickStairs, cx, bottom, cx, sbb);
 			surroundBlockCorners(world, stoneBrick, cx, bottom, cx, sbb);
@@ -688,8 +685,8 @@ public class TowerWingComponent extends TFStructureComponentOld {
 				surroundBlockCorners(world, stoneBrick, cx, cy, cx, sbb);
 			}
 
-			surroundBlockCardinalRotated(world, topStoneBrickStairs, cx, top-1, cx, sbb);
-			surroundBlockCorners(world, stoneBrick, cx, top-1, cx, sbb);
+			surroundBlockCardinalRotated(world, topStoneBrickStairs, cx, top - 1, cx, sbb);
+			surroundBlockCorners(world, stoneBrick, cx, top - 1, cx, sbb);
 		}
 
 		placeTreasureAtCurrentPosition(world, cx, bottom + 1, cx, TFLootTables.TOWER_ROOM, sbb);
@@ -1800,16 +1797,13 @@ public class TowerWingComponent extends TFStructureComponentOld {
 		if (direction == Direction.SOUTH) {
 			minZ = this.boundingBox.minZ();
 			maxZ = this.boundingBox.minZ();
-		}
-		else if (direction == Direction.WEST) {
+		} else if (direction == Direction.WEST) {
 			maxX = this.boundingBox.maxX();
 			minX = this.boundingBox.maxX();
-		}
-		else if (direction == Direction.NORTH) {
+		} else if (direction == Direction.NORTH) {
 			maxZ = this.boundingBox.maxZ();
 			minZ = this.boundingBox.maxZ();
-		}
-		else if (direction == Direction.EAST) {
+		} else if (direction == Direction.EAST) {
 			minX = this.boundingBox.minX();
 			maxX = this.boundingBox.minX();
 		}

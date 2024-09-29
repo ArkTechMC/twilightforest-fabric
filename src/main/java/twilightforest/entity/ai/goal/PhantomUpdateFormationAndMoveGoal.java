@@ -51,8 +51,8 @@ public class PhantomUpdateFormationAndMoveGoal extends Goal {
 			case CHARGE_PLUSZ -> this.getMoveAcrossPosition(true, false);
 			case ATTACK_PLAYER_START, HOVER -> this.getHoverPosition(CIRCLE_LARGE_RADIUS);
 			case CHARGE_MINUSZ -> this.getMoveAcrossPosition(false, false);
-			default -> this.getLoiterPosition();
 			case ATTACK_PLAYER_ATTACK -> this.getAttackPlayerPosition();
+			default -> this.getLoiterPosition();
 		};
 	}
 
@@ -72,9 +72,12 @@ public class PhantomUpdateFormationAndMoveGoal extends Goal {
 			} else {
 				// random weapon switch!
 				switch (this.boss.getRandom().nextInt(3)) {
-					case 0 -> this.boss.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TFItems.KNIGHTMETAL_SWORD.get()));
-					case 1 -> this.boss.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TFItems.KNIGHTMETAL_AXE.get()));
-					case 2 -> this.boss.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TFItems.KNIGHTMETAL_PICKAXE.get()));
+					case 0 ->
+							this.boss.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TFItems.KNIGHTMETAL_SWORD.get()));
+					case 1 ->
+							this.boss.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TFItems.KNIGHTMETAL_AXE.get()));
+					case 2 ->
+							this.boss.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TFItems.KNIGHTMETAL_PICKAXE.get()));
 				}
 
 				this.boss.switchToFormation(KnightPhantom.Formation.ATTACK_PLAYER_START);

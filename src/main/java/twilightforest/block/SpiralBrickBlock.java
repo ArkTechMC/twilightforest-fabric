@@ -47,10 +47,10 @@ public class SpiralBrickBlock extends Block {
 
 	private static Diagonals convertVerticalDirectionToDiagonal(Direction facing) {
 		return switch (facing) {
-			default -> Diagonals.TOP_RIGHT;
 			case SOUTH -> Diagonals.BOTTOM_LEFT;
 			case EAST -> Diagonals.TOP_LEFT;
 			case WEST -> Diagonals.BOTTOM_RIGHT;
+			default -> Diagonals.TOP_RIGHT;
 		};
 	}
 
